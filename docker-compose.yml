@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  weather:
+    build: .
+    container_name: django-weather
+    ports:
+      - "8000:8000"
+    environment:
+      - CITY=Kotlas
+    restart: unless-stopped
+
+  monitor:
+    build: ./monitoring
+    container_name: weather-monitor
+    depends_on:
+      - weather
+    restart: unless-stopped
