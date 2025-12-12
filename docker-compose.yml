@@ -5,7 +5,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - CITY=Kotlas
+      - CITY=Moscow
     restart: unless-stopped
 
   monitor:
