@@ -1,6 +1,8 @@
 import requests, os
 from django.http import JsonResponse, HttpResponse
 
+def health(request):
+    return HttpResponse("OK")
 
 def index(_):
     CITY = os.getenv('CITY', 'Moscow')
